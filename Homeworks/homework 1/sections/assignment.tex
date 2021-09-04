@@ -1,0 +1,80 @@
+\section{Executive Summary}
+
+\pagebreak
+
+\section{Model and attributes for Workday Student System}
+
+\subsection{Entity}
+Web Page
+
+\subsection{Attributes}
+Right now the current system uses a traditional check-out system where a store 
+staff person scans each item, collects the payment 
+and bags the groceries. \newline
+\begin{center}
+    \begin{tabular}{|l c p{7cm}|} 
+        \hline
+        Name & Attribute & Description \\ [0.5ex] 
+        \hline
+        First Contentful Paint & FCP & Measures how long the browser take to paint something in the DOM, after a user calls the page.\\ 
+        \hline
+        Speed Index & SI & Measures how long takes it takes to be visually displayed while the page is loading.\\
+        \hline
+        Largest Contentful Paint & LCP & Measures how long does it take to largest content in the viewport, not the DOM, to be rendered in the screen.\\
+        \hline
+        Time to interactive & TTI & Measures how long it takes a page to become interactive for the user. \\
+        \hline
+        Total Blocking Time & TBT & Measures the total time that  for a page to be blocked from responding to user input, such as mouse clicks, screen taps, or keyboard presses. \\ 
+        \hline
+        Cumulative Layout Shift & CLS &
+        Measure of the largest burst of layout shift, moving content around, scores for every unexpected layout shift that occurs during the entire lifespan of a page. \\ 
+        \hline
+    \end{tabular}
+\end{center}
+\pagebreak
+\subsection{Model}
+\textbf{FCP} = time * metric Score * 0.1 \newline
+\textbf{SI} = time * metric Score * 0.1 \newline
+\textbf{LCP} = Time * metric Score * 0.25 \newline
+\textbf{TTI} = time * metric Score * 0.1 \newline
+\textbf{TBT} = time * metric Score * 0.30 \newline
+\textbf{CLS} = value * metric Score * 0.15\newline\newline
+\textbf{Performance Score}: FCP + SI + LCP + TTI + TBT + CLS
+
+\pagebreak
+
+\section{We are the customers}
+\subsection{Proposed Fixes}
+\begin{itemize}
+    \item Use small size images
+    \item Use webp images when possible
+    \item The text in the entries may be of any length.
+    \item Avoid large payloads
+  \end{itemize}
+\subsection{Features}
+\begin{itemize}
+    \item Avoid using JS plugins unless is necessary Delete unused Javascript.
+    \item Serve static assets with an efficient cache policy would minimize the layout shift.
+\end{itemize}
+
+\pagebreak
+
+\section{GQM}
+\begin{itemize}
+    \item \textbf{Goal}: Evaluate Webpage loading performance for Workday
+    \begin{enumerate}
+        \item \textbf{Question}: Who is the using the WorkDay Student System?
+        \begin{itemize}
+            \item \textbf{Metrics}: All Stevens Students
+        \end{itemize}        
+        \item \textbf{Question}: What is webpage loading performance?
+        \begin{itemize}
+            \item \textbf{Metrics}: First Contentful Paint (FCP)
+            \item \textbf{Metrics}: Speed Index (SI)
+            \item \textbf{Metrics}: Largest Contentful Paint (LCP) 
+            \item \textbf{Metrics}: Time to interactive (TTI)
+            \item \textbf{Metrics}: Total Blocking Time (TBT) 
+            \item \textbf{Metrics}: Cumulative Layout Shift (CLS)
+        \end{itemize}
+    \end{enumerate}        
+\end{itemize}
