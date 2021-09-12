@@ -62,28 +62,91 @@ Since we already have the chart and the R2 we are going to use the linear equati
 \end{center}
 
 \noindent\newline 
-And with this chart the linear equation is \textbf{y = 1.98x + 8.26} where \textit{1.98 is the slope}, \textit{8.26} is y-intersection point, \textit{x} is the amount of KLOC and \textit{Defects} is the total of defects.
+And with this chart the linear equation is \textbf{y = 1.98x + 8.26} where \textit{1.98 is the slope}, \textit{8.26} is y-intersection point, \textit{x} is the amount of KLOC and \textit{y} is the total of defects.
 
 \noindent\newline \newline
 \textbf{y = 1.98x + 8.26 = 1.98(50) + 8.26 = 107.26}
 \noindent\newline\newline 
-This result tell us that the expected number of defects for a 50KLOC project is around \textbf{107} defects
+This result tell us that the expected number of defects for a 50KLOC project is around \textbf{107} defects.
 
 \pagebreak
 
+\noindent
+We are going to create a new metric called defect density.
 
+\begin{center}
+    \includegraphics[scale=0.6]{Q3-Table.png}    
+\end{center}
+
+\noindent
+To get the defect density we are going to divide the amount of defects by the amount of KLOCS.
+
+\begin{center}
+    \includegraphics[scale=0.6]{histogram.png}    
+\end{center}
+
+\noindent
+This is what the histogram for the defect densisty looks like.
+
+\pagebreak
+\noindent
+Now that we have the deviation we are going to calculate the mean, percentiles and stardard deviation.
+
+\begin{center}
+    \includegraphics[scale=0.6]{Q3-Details}    
+\end{center}
+
+\noindent
+
+\begin{center}
+    \begin{tabular}{|p{4cm} | c | c|}
+        \hline
+        Item & Value & - \\ [0.5ex] 
+        \hline
+        Mean & 2.068 & -  \\  
+        \hline
+        1SD & 2.068 +/- 0.6 & 1.468 - 2.668 \\
+        \hline
+        2SD & 2.068 +/- 1.2 & 0.868 - 3.268 \\
+        \hline
+        Standard Deviation & 0.5874 & -\\
+        \hline
+    \end{tabular}
+\end{center}
+
+\noindent\newline \newline
+Now we are going detect what is the numbers of defects for 50 KLOC 95\% of the time, we are assuming that is a normal distribution.
+\noindent\newline \newline
+To get the 95\% we are going to need the \textbf{2 SD} and the \textbf{Mean}, by using the information that we had before the mean is \textbf{2.068} and the 2SD is \textbf{2.068 +/- 1.2}. So the expected range of number of defects that i expect for a 50 KLOC system, 95\% of the time would be between \textbf{0.868} and \textbf{3.268} defects per KLOC.
+\noindent\newline \newline
+I would say that is Normal Distributions with a Positive Skewed because of the shape of the histogram.
+
+\pagebreak
 
 \section{Observations}
 \begin{itemize}
-    \item fill later
+    \item The deffects are always bigger than the amount of KLOC 
+    \item After 30 KLOC the amount of defect more than double
+    \item We can see that there is strong relationship between the defects and KLOC 
 \end{itemize}
 \pagebreak
 
 \section{Key learning}
 \begin{itemize}
-    \item fill later
+    \item This type of charts help us to get insights as long as we have good data.
+    \item We are able to calculate not only deffects but also the behaviour of people.
+    \item We can use Scatter plots to see the correlation between two different variables.
+    \item You can use different types of charts depending on the amount of variables you want to use 
+    \item Box plots are really usefull to detect outliers
+    \item You can only get standard deviation and variance if the data set is normally distributed
 \end{itemize}
 
 \pagebreak
 
 \section{Commentary}
+\begin{itemize}
+    \item If this information is real we extrapolate this at the scale of google an imagine how many deffects could exist in they current codebase.
+    \item The box and whiskers are use frequently in the world of finance.
+    \item We could use this information to create ML models.
+\end{itemize}
+
