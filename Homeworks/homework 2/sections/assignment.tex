@@ -27,13 +27,13 @@ With the following data we are going to draw a \textbf{Box and Whisker plot}
         \hline
         Min & 2 & 6 \\  
         \hline
-        Q1 & 8 & 23.5    \\
+        Q1 & 15 & 23.5    \\
         \hline
         Median & 24 & 50 \\
         \hline
-        Q2 & 82.5 & 200  \\  
+        Q2 & 100 & 200  \\  
         \hline
-        Maximun & 189 & 250 \\
+        Maximun & 189 & 350 \\
         \hline
     \end{tabular}
 \end{center}
@@ -46,22 +46,42 @@ We get the smallest value for KLOC and Defects, then we apply those values in th
 After we calculate the median and put it in the \textbf{median} row, we get the first quartile by using the function \textit{QUARTILE(range, 1)} and put it in the \textbf{Q1} row, and use the same function but replace de 1 for a 3 to get the second quartile, \textit{QUARTILE(range, 3)} and put the values in \textbf{Q2}.
 
 \begin{center}
-    \includegraphics[scale=0.8]{box}    
+    \includegraphics[scale=0.6]{box}    
 \end{center}
 \noindent
 From this chart we can determine that amount of defects per KLOC is amount of time higher, meaning that a few KLOC could potentially create a lot of defects.
 
 \pagebreak
+\noindent
+Now we want to know how many defects do i get for a program that 50KLOC.
+\noindent\newline \newline 
+Since we already have the chart and the R2 we are going to use the linear equation to get the amount of defects for a 50K line
+
+\begin{center}
+    \includegraphics[scale=0.6]{50k}    
+\end{center}
+
+\noindent\newline 
+And with this chart the linear equation is \textbf{y = 1.98x + 8.26} where \textit{1.98 is the slope}, \textit{8.26} is y-intersection point, \textit{x} is the amount of KLOC and \textit{Defects} is the total of defects.
+
+\noindent\newline \newline
+\textbf{y = 1.98x + 8.26 = 1.98(50) + 8.26 = 107.26}
+\noindent\newline\newline 
+This result tell us that the expected number of defects for a 50KLOC project is around \textbf{107} defects
+
+\pagebreak
+
+
 
 \section{Observations}
 \begin{itemize}
-    \item In mobile there is a layout shift when you go to similar pages, instead of keeping the same size for the banners, they are different sizes on different pages.
+    \item fill later
 \end{itemize}
 \pagebreak
 
 \section{Key learning}
 \begin{itemize}
-    \item Hello world
+    \item fill later
 \end{itemize}
 
 \pagebreak
