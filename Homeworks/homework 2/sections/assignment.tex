@@ -53,9 +53,9 @@ From this chart we can determine that amount of defects per KLOC is amount of ti
 
 \pagebreak
 \noindent
-Now we want to know how many defects do i get for a program that 50KLOC.
+Now we want to know how many defects do I get for a program that 50KLOC.
 \noindent\newline \newline 
-Since we already have the chart and the R2 we are going to use the linear equation to get the amount of defects for a 50K line
+Since we already have the chart and the R2 we are going to use the linear equation to get the amount of defects for a 50KLOC
 
 \begin{center}
     \includegraphics[scale=0.6]{50k}    
@@ -67,7 +67,7 @@ And with this chart the linear equation is \textbf{y = 1.98x + 8.26} where \text
 \noindent\newline \newline
 \textbf{y = 1.98x + 8.26 = 1.98(50) + 8.26 = 107.26}
 \noindent\newline\newline 
-This result tell us that the expected number of defects for a 50KLOC project is around \textbf{107} defects.
+This result tells us that the expected number of defects for a 50KLOC project is around \textbf{107} defects.
 
 \pagebreak
 
@@ -79,18 +79,18 @@ We are going to create a new metric called defect density.
 \end{center}
 
 \noindent
-To get the defect density we are going to divide the amount of defects by the amount of KLOCS.
+To get the defect density we are going to divide the number of defects by the amount of KLOCS.
 
 \begin{center}
     \includegraphics[scale=0.6]{histogram.png}    
 \end{center}
 
 \noindent
-This is what the histogram for the defect densisty looks like.
+This is what the histogram for the defect density looks like.
 
 \pagebreak
 \noindent
-Now that we have the deviation we are going to calculate the mean, percentiles and stardard deviation.
+Now that we have the deviation we are going to calculate the mean, percentiles, and standard deviation.
 
 \begin{center}
     \includegraphics[scale=0.6]{Q3-Details}    
@@ -115,9 +115,9 @@ Now that we have the deviation we are going to calculate the mean, percentiles a
 \end{center}
 
 \noindent\newline \newline
-Now we are going detect what is the numbers of defects for 50 KLOC 95\% of the time, we are assuming that is a normal distribution.
+Now we are going to detect what is the number of defects for 50 KLOC 95\% of the time, we are assuming that is a normal distribution.
 \noindent\newline \newline
-To get the 95\% we are going to need the \textbf{2 SD} and the \textbf{Mean}, by using the information that we had before the mean is \textbf{2.068} and the 2SD is \textbf{2.068 +/- 1.2}. So the expected range of number of defects that i expect for a 50 KLOC system, 95\% of the time would be between \textbf{0.868} and \textbf{3.268} defects per KLOC.
+To get the 95\% we are going to need the \textbf{2 SD} and the \textbf{Mean}, by using the information that we had before the mean is \textbf{2.068} and the 2SD is \textbf{2.068 +/- 1.2}. So the expected range of the number of defects that i expect for a 50 KLOC system, 95\% of the time would be between \textbf{0.868} and \textbf{3.268} defects per KLOC.
 \noindent\newline \newline
 I would say that is Normal Distributions with a Positive Skewed because of the shape of the histogram.
 
@@ -125,19 +125,19 @@ I would say that is Normal Distributions with a Positive Skewed because of the s
 
 \section{Observations}
 \begin{itemize}
-    \item The deffects are always bigger than the amount of KLOC 
+    \item The defects are always bigger than the amount of KLOC 
     \item After 30 KLOC the amount of defect more than double
-    \item We can see that there is strong relationship between the defects and KLOC 
+    \item We can see that there is a strong relationship between the defects and KLOC I would say that is Normal Distributions with a Positive Skewed because of the shape of the histogram.
 \end{itemize}
 \pagebreak
 
 \section{Key learning}
 \begin{itemize}
-    \item This type of charts help us to get insights as long as we have good data.
-    \item We are able to calculate not only deffects but also the behaviour of people.
+    \item This type of chart helps us to get insights as long as we have good data.
+    \item We are able to calculate not only defects but also the behavior of people.
     \item We can use Scatter plots to see the correlation between two different variables.
-    \item You can use different types of charts depending on the amount of variables you want to use 
-    \item Box plots are really usefull to detect outliers
+    \item You can use different types of charts depending on the number of variables you want to use 
+    \item Box plots are really useful to detect outliers
     \item You can only get standard deviation and variance if the data set is normally distributed
 \end{itemize}
 
@@ -145,8 +145,8 @@ I would say that is Normal Distributions with a Positive Skewed because of the s
 
 \section{Commentary}
 \begin{itemize}
-    \item If this information is real we extrapolate this at the scale of google an imagine how many deffects could exist in they current codebase.
-    \item The box and whiskers are use frequently in the world of finance.
+    \item If this information is real we extrapolate this at the scale of Google and imagine how many defects could exist in the current codebase.
+    \item The box and whiskers are used frequently in the world of finance.
     \item We could use this information to create ML models.
 \end{itemize}
 
