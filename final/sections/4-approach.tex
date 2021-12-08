@@ -1,0 +1,18 @@
+\section{Approach}
+\subsection{Data Fetching}
+For this paper we use Github API to get all the information from the projects, we get an API token, which increase the limits of their rate limit, we went through all the projects and we get all the commits and issues.
+
+\textbf{Commits}: From commits we get the id, the message, the author and the date of the commit.
+
+
+\textbf{Issues}: From issues we get the id, the message, the author, the date, the state (open or closed), and the comments, the comments are useful because this is what we are going to use for sentiment analysis
+\subsection{Sentiment Analysis}
+Each comments has a message and an author associate to it, we use a program that is able to provides us with a score about the sentiment of each comment, which could be either positive or negative, and also provides us a vector of words that can be either positive or negatives, which are used within the sentence.
+
+\subsection{Data Hosting}
+Once we iterate over this information we end up with two json files, one for issues and one for commits, which weights 405.7 MB and 16.2 MB respectively, which is an issue for sharing and also for processing, since this information is in a single file not all computers are able to allocate the entire file and memory and also make test slower.
+
+For this reason we decide to upload this data into a MongoDB database that we can use, which is already optimized to handle this type of the structure, since this data is semi-structure, is in a JSON format and we needed to be able to filter, query or sort, MongoDB sounds like a good fit.
+
+\subsection{Edge Cases}
+For all the cases in which we are not able to get the data by using MongoDB query engine, we use scripting languages to fill these gaps, this scripts will connect to the MongoDB fetch the raw data and the script will do more complex queries with the data provided.

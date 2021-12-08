@@ -1,0 +1,25 @@
+\section{Experiment Design}
+There are two main things that we want to main questions that we want to answer to inform a potential contributor if a particular project would fit their goals.
+
+\subsection{Is the project alive?}
+The first one is to figure out if a particular project is alive, by \textbf{alive} we mean a project that it's in active development, it has a roadmap for the future and the community is active, there are examples of open source libraries that have an active community, the project still receive issues or pull request but from a roadmap perspective they already stablished that the project is done, so no new functionality will be added, example of this is the library moment\cite{moment}.
+
+For this we are going to see how are the commits and issues behaving over time to see if there is any trend, either an increase or decline, that can help us as an indicator to see the "liveliness" of a project.
+
+This are the data that we are going to collect to get our insights for each of the project:
+\begin{enumerate}
+    \fontsize{10pt}{10pt}
+    \selectfont
+    \item Trend of commits over the years
+    \item Trend of issues over the years
+    \item Trend of commits by month
+    \item Trend of issues by state
+    \item Trend of users over the years
+\end{enumerate}
+
+\subsection{What is the overall sentiment of the project?}
+The second one is related to the community behind this projects, we want to know if they are positive, negatives or neutral, and into which degree.
+
+For this we are going to use the comments inside the issues, the reason we are not using commit messages is because this one are related to the code, but comments in an issue have a more social nature, so comments would be a better indicator of the project “personality” that the commit message.
+
+We fetch data from all the issues and each issue has a comment property that includes multiple messages send by the contributor, collaborator or any interested party, for each of this comments we performed a sentiment analysis on which we segmented the comment into words and group the positive and negatives words, then we see a comparative value between this and assign an score, if the word is positive we assign a positive score and if it’s negative we assign a negative value, we also keep a list of all the positive and negative words for future analysis.
