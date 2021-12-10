@@ -280,5 +280,4 @@ out/*
 *_temp.tex
 .aux
 .fbd_latexmk
-*.pdf
 *.DS_Store
