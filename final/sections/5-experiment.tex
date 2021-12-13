@@ -2,11 +2,11 @@
 There are two main things we want to know about the projects, to see if they are a good fit for a first-time contributor.
 
 \subsection{Is the project alive?}
-The first one is to figure out if a particular project is alive, by \textbf{alive} we mean a project that it's in active development and the community is active, there are examples of open source libraries that have an active community, the project still receive issues or pull request but from a roadmap perspective they already established that the project is done, so no new functionality will be added, an example of this is the library moment\cite{moment}.
+It is essential to determine whether or not the project is still being developed and maintained; by \textbf{alive}, we mean that there are still issues or pull requests being submitted to the project, but the project's roadmap has already established that no new functionality will be added; the library moment \cite{moment} is an example of this.
 
-For this reason, we are going to see how are the commits and issues behave over time to see if there is any trend, either an increase or decline, we are going to use that as an indicator of the "liveliness" of a project.
+So, as an indicator of how active a project is, we will look at how commits and issues change over time; we will use this as a measure of its "liveliness."
 
-For the data that is going to be used we are going to group them by year, and group the projects together, and see what is the trendline for each of the metrics, these are:
+For this analysis, we will group the data by year and then examine the trends for each of the following metrics:
 \begin{enumerate}
     \fontsize{10pt}{10pt}
     \selectfont
@@ -16,8 +16,8 @@ For the data that is going to be used we are going to group them by year, and gr
 \end{enumerate}
 
 \subsection{What is the overall sentiment of the project?}
-The second one is related to the community behind these projects, we want to know if they are positive, negatives, or neutral, and to which degree.
+Second, we would like to know whether the people working on these projects are positive, negative, or neutral, and to what extent.
 
-For this we are going to use the comments inside the issues, the reason we are not using commit messages is because this one are related to the code, but comments in an issue have a more social nature, so comments would be a better indicator of the project “personality” that the commit message.
+Rather than using commit messages, which are more closely associated with the code, we will look to the comments within issues to get a sense of the project's "personality", because comments are more social.
 
-We fetch data from all the issues and each issue has a comment property that includes multiple messages sent by the contributor, collaborator, or any interested party, for each of these comments we performed a sentiment analysis on which we segmented the comment into words and group them into positive, neutral and negatives, then we see a comparative value between this and assign a score, if the word is positive we assign a positive score and if it’s negative we assign a negative value, we also keep a list of all the positive and negative words for future analysis.
+There are multiple comments on each issue, and we perform a sentiment analysis on each of these comments; for each of these comments, we group the words into positive, neutral, and negative, then we see the comparative value between this and assign a score. If the word is positive, we assign a positive score; there are multiple comments for each word, and each comment has a sentiment analysis. If it is negative, we assign a negative value; we also keep a list of all positive and negative words for future reference. 

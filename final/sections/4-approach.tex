@@ -4,15 +4,15 @@ For this paper we use Github API to get all the information from the projects, w
 
 \textbf{Commits}: From commits, we get the id, the message, the author, and the date of when the commit was created.
 
-\textbf{Issues}: From issues, we get the id, the message, the author, the date, the state (open or closed), and the comments, the comments are useful because this is what we are going to use for sentiment analysis.
+\textbf{Issues}: From issues, we get the id, the message, the author, the date, the state (open or closed), and the comments. The comments are helpful because this is what we will use for sentiment analysis.
 
 \subsection{Sentiment Analysis}
 We read and parse all the issues from the JSON file, each comment inside the issue has a message and an author associate with it, we split the content into words, remove all the special characters and we categorize each word into positive and negative, and with that, we assign a score to the comment.
 
 \subsection{Data Hosting}
-The two JSON files generated in the \textbf{Data Fetching} section are really large, the \textit{issues} file has 405.7 MB and the \textit{commits} file has 16.2 MB, which makes the process to query data really slow because we would need to mount all the data into memory for every request, while also need to create a script for every type of query we would like to perform to the data.
+The two JSON files generated in the \textbf{Data Fetching} section are large, the \textit{issues} file weighing in at 405.7 MB and the \textit{commits} file weighing in at 16.2 MB, making the process of querying data slow because we would need to mount all the data into memory for each request, as well as create a script for each type of query we would like to perform on the data.
 
-To avoid this we are going to host that information into a MongoDB instance, since the data is already in JSON we don't need to do any custom transformation, and they have a query language that supports JSON which makes it easier and faster to run queries against the data.
+To avoid this, we will host that information in a MongoDB instance; because the data is already in JSON, no custom transformation is required, and they have a query language that supports JSON, making it easier and faster to run queries against the data.
 
 \subsection{Edge Cases}
-For all the cases in which we are not able to get the data by using the MongoDB query engine, we use scripting languages to fill these gaps, this scripts will connect to the MongoDB instance, fetch the JSON and the script will do more complex queries with the data provided.
+We use scripting languages to fill in the gaps where the MongoDB query engine cannot obtain the data. These scripts connect to the MongoDB instance, retrieve the JSON, and then perform more complex queries with the data provided.
