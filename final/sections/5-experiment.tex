@@ -1,0 +1,25 @@
+\section{Experiment Design}
+There are two main things we want to know about the projects, to see if they are a good fit for a first-time contributor.
+
+\subsection{Is the project alive?}
+It is essential to determine whether or not the project is still being developed and maintained; by \textbf{alive}, we mean that there are still issues or pull requests being submitted to the project, but the project's roadmap has already established that no new functionality will be added; the library moment \cite{moment} is an example of this.
+
+So, as an indicator of how active a project is, we will look at how commits and issues change over time; we will use this as a measure of its "liveliness."
+
+For this analysis, we will group the data by year and then examine the trends for each of the following metrics:
+\begin{enumerate}
+    \fontsize{10pt}{10pt}
+    \selectfont
+    \item Trend of commits over the years
+    \item Trend of opened issues over the years
+    \item Trend of unique contributors per year
+\end{enumerate}
+
+\subsection{What is the overall sentiment of the project?}
+Second, we would like to know whether the people working on these projects are positive, negative, or neutral, and to what extent.
+
+Rather than using commit messages, which are more closely associated with the code, we will look to the comments within issues to get a sense of the project's "personality", because comments are more social.
+
+There are multiple comments on each issue, and we perform a sentiment analysis on each of these comments; for each of these comments, we group the words into positive, neutral, and negative, then we see the comparative value between this and assign a score. If the word is positive, we assign a positive score; there are multiple comments for each word, and each comment has a sentiment analysis. If it is negative, we assign a negative value; we also keep a list of all positive and negative words for future reference. 
+
+\pagebreak

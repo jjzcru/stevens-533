@@ -1,0 +1,41 @@
+\section{40\% rule}
+\subsection{What do you predict as the total number of bugs in the system?}
+The first step is to get what is the month with the defects, in our case is going to be the third month which has 24 defects (t\textsubscript{3}=24).\newline\newline
+\noindent
+The next step is to calculate the sum of the defects up to that day so we get the sum from the defects from month 1 to month 3.
+
+\[ Sum = Defects 1 + Defects 2 + Defects 3 \]
+\[ Sum = 13 + 20 + 24 \]
+\[ Sum = 57 \]
+
+\noindent
+The total of defects found up to the third month is \textbf{57}. With that value we are going to calculate what is the expected defects to be found using the formula.
+\[ Defects = Sum * 100 / 40 \]
+\[ Defects = 57 * 100 / 40 \]
+\[ Defects = 143  \]
+
+\noindent\newline
+The total of defects that are found in the system is \textbf{143}.
+\pagebreak
+\subsection{How many bugs do you predict as being left in the system? }
+Now we have a total of defects that are found in the system, the next step is to get the Sum of all the defects.
+
+\[ Sum = Defects 1 + Defects 2 + Defects 3 + Defects 4 + Defects 5 + Defects 6 \]
+\[ Sum = 13 + 20 + 24 + 22 + 17 + 8\]
+\[ Sum = 104\]
+\noindent
+So far we have only found \textbf{104} defects, which means we need to subtract this from the \textbf{143} expected defects.
+\[ Defects Left = 143 - 104 \]
+\[ Defects Left = 39 \]
+\noindent
+This will give us a total of \textbf{39} defects left to be found.
+
+\subsection{What is the equation that predicts the defects?}
+\[ f(t)/K = 1 - e^{(-1/2)} = 0.4\]
+\subsection{If you shipped at the end of month 6 (and assuming you removed all the defects found at that time), what would you predict as the defect removal efficiency?}
+Since we know that the total of defects is going to be \textbf{143} and for that release we had fixed \textbf{104} that means that we still could see \textbf{39} new defects after the 6-month release so the DRE (Defect Removal Efficiency) would be \textbf{72.72\%}.
+
+\[ DRE = E / (E + D)\]
+\[ DRE = 104 / (104 + 39) \]
+\[ DRE = 104 / 143 \]
+\[ DRE = 0.7272 = 72.72\%\]

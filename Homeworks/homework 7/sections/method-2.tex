@@ -1,0 +1,42 @@
+\section{t\textsubscript{m} and one more data point}
+\subsection{What do you predict as the total number of bugs in the system?}
+
+We are going to use t\textsubscript{3} as a reference because it's the month with most defects, the first step is to calculate the \textbf{C}.
+
+\[ c = t_m * \sqrt[2]{2}\]
+\[ C = c ^2  = (t_m * \sqrt[2]{2})^2 \]
+\[ C = t_m^2 * 2\]
+\[ C = 3^2 * 2\]
+\[ C = 9 * 2\]
+\[ C = 18\]
+\noindent
+Now that we have \textbf{C} we are going to use the first month to solve \textbf{K}.
+\[ t = 1; f(1) = 13;\]
+\[ T = t^2 = 1\]
+\[ K = C * e^{(T/C)} * f(t)/2t\]
+\[ K = 18 * e^{(1/18)} * 13/2(1)\]
+\[ K = 124\]
+\noindent
+The total number of bugs for the system is going to be \textbf{124}.
+
+\pagebreak
+
+\subsection{How many bugs do you predict as being left in the system? }
+We already calculate the total of bugs in the system which is \textbf{124} and so far we had found \textbf{104} bugs which give us a total of \textbf{20} bugs left in the system. 
+\[ Defects = 124 - 104\]
+\[ Defects = 20\]
+
+\subsection{What is the equation that predicts the defects? }
+Given that the \textbf{K} = 124 and \textbf{C} = 18 the equation would be.
+\[ f(t) = K * (2t / c^2) * e^{-(t/c)^2}\]
+\[ T = t^2; C = c^2;\]
+\[ f(t) = K * (2t / C) * e^{-(T/C)}\]
+\[ f(t) = 124 * (2t / 18) * e^{-(T/18)}\]
+\[ f(t) = 124 * (t / 9) * e^{-(T/18)}\]
+\subsection{If you shipped at the end of month 6 (and assuming you removed all the defects found at that time), what would you predict as the defect removal efficiency?}
+Since we know that the total of defects is going to be \textbf{124} and for that release we had fixed \textbf{104} that means that we still could see \textbf{20} new defects after the 6-month release so the DRE (Defect Removal Efficiency) would be \textbf{83.87\%}.
+
+\[ DRE = E / (E + D)\]
+\[ DRE = 104 / (104 + 20) \]
+\[ DRE = 104 / 124 \]
+\[ DRE = 0.8387 = 83.87\%\]

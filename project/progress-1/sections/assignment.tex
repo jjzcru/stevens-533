@@ -1,0 +1,102 @@
+\section{Description}
+The project still maintains the same description, as before. We are going to use the Github API to get information on the projects, the issues, the comments, and the collaborators, to try to understand how the community for each project is behaving.\newline\newline
+
+\noindent
+But we are also going to use some existing data from State of Js to give an overview as an introduction to the project.
+
+\pagebreak
+
+\section{GQM}
+The following questions are applied to the three projects.\newline\newline
+\noindent
+\textbf{Goal}: Determine which project will a new contributor choose between react, svelte, and vue?\newline\newline
+\textbf{Questions}
+\begin{enumerate}
+    \item How many people are contributing to the project?
+    \begin{itemize}
+        \item Total of contributors
+    \end{itemize}
+    \item From where are this contributions comming from?
+    \begin{itemize}
+        \item Contributors location
+    \end{itemize}
+    \item What is the demographic of the contributors?
+    \begin{itemize}
+        \item Contributor age
+        \item Contributos gender
+        \item Contributor 
+    \end{itemize}
+    \item What is the sentiment of the community? Is a welcoming community? Is it toxic?
+    \begin{itemize}
+        \item Issue comments
+    \end{itemize}
+    \item What is the frequency of the contributions?
+    \begin{itemize}
+        \item Issues creation date
+    \end{itemize}
+    \item Is the project active?
+    \begin{itemize}
+        \item Issues creation date
+        \item Pull requests creation date
+        \item Commit creation date
+        \item Issues state
+    \end{itemize}
+    \item Is this project back by organizations or indipendent developers?
+    \begin{itemize}
+        \item Contributors Organization
+    \end{itemize}
+\end{enumerate}
+
+\pagebreak
+\section{Activities}
+We are going to get reports about how this project had performed in the previous years to have a background that we can use as an introduction to our study and see if the finding that we get from our investigation match with those reports.
+\section{Data Points}
+So far we are trying to get queries that we need to get the data that we are going to use for the project, we know that the data exists the difficult part is how to ask the Github API.\newline\newline
+\noindent
+This are the data definition objects that we see that are required to do the project:
+\begin{enumerate}
+    \item Issue comments 
+    \item Issue creation date
+    \item Issue closing date 
+    \item Issue comment date 
+    \item Issue author 
+    \item Contributor name 
+    \item Contributor organizations
+    \item Issue comment author association 
+    \item Contributor location 
+    \item Commits count 
+\end{enumerate}
+
+\pagebreak
+
+\section{Initial Analysis}
+At the current time, React is the framework that is dominating, in the \textbf{State of Frontend} survey, 74.2\% of the respondents were using it, but Vue is getting traction surpassing React in stars in GitHub, in last place is svelte because is the newest of all, but is getting traction really quick for its age.\newline\newline
+
+\noindent
+Using GitHub metrics this is the current state of the world for this framework:
+\begin{center}
+    \begin{tabular}{|p{3cm} | p{2cm} | p{2cm}| p{2cm}|}
+        \hline
+        \textbf{Metric} & \textbf{React} & \textbf{Vue} & \textbf{Svelte}\\
+        \hline
+        Stars & 176k & 189k & 50.7k \\ 
+        \hline
+        Fork & 35.4k & 30.3k & 2.4k \\  
+        \hline
+        Watch & 6.7k & 6.2k & 874 \\
+        \hline
+        Contributors & 401 & 23 & 445  \\
+        \hline
+        Used by & 7.6m & - & 60.7k  \\
+        \hline
+    \end{tabular}
+\end{center}
+\noindent
+We can see that even if Vue has a bigger star count, React is used by more people, and even if the Svelte doesn't have enough size compared to the other ones, is getting traction with new tools coming to its ecosystem.
+
+\section{Risk Managment}
+For this project, we have the risk that the data comes from a GitHub API which comes as a rest API and a graphql endpoint, and in the team, 3 people do not have experience working with REST APIs or graphql. \newline\newline
+
+\noindent
+Another risk is the fact that the GitHub API with graphql is a little bit verbose and they have their own mechanism to navigate the content, they use pagination for their queries meaning that there is no way to get all the data from a single request so we need to create a program that does that request and get all the information for the different pages and aggregate them at the end.
+

@@ -1,0 +1,100 @@
+\section{Prototype I}
+First we know the following information
+\begin{itemize}
+    \item We have a budget of \$600k
+    \item The protype is going to around 5 KSLOC
+    \item Average cost of developer is 8k per person per month
+    \item All the parameters are nominal except for:
+    \begin{itemize}
+        \item RELY: Low; since the prototype will not be operational
+        \item CPLX: High; some complex cross-device and external interfaces
+        \item ACAP: Very High; prototype needs top talent
+        \item PCAP: Very High; prototype needs top talent
+        \item APEX: High; prototypers are familiar with medical field
+        \item PLEX: Low; prototypers unfamiliar with new devices
+        \item RUSE: Low; prototype code will not be reused
+    \end{itemize}
+\end{itemize}
+
+\subsection{Estimated Effort and cost}
+For the effort we have an scaling component of: \newline\newline
+E = 0.91 + 0.01 (3.72 + 3.04 + 4.24 + 3.29 + 4.68) = 1.10 \newline\newline
+\noindent
+The constant \textbf{A} has a value of 2.94, we are going to calculate the Effort Adjustment Factor (EAF) for that we are going to use the values RELY, CPLX, ACAP, PCAP, APEX, PLEX and RUSE because are the only values that are not nominal, meaning that they contribute to  change in the effort. \newline\newline
+\textbf{EAF} = RELY * CPLX * ACAP * PCAP * APEX * PLEX * RUSE \newline
+\textbf{EAF} = 0.92 * 1.17 * 0.71 * 0.76 * 0.88 * 1.09 * 0.95 \newline
+\textbf{EAF} = 0.53\newline\newline
+
+\pagebreak
+\noindent
+Now that we have the EAF, KSLOC and the constant we can calculate the effort and the cost of the prototype: \newline\newline
+\textbf{Effort} = A * KSLOC ** (1.10) * EAF \newline
+\textbf{Effort} = 2.94 * 5 KSLOC ** (1.10) * 0.53 = 9.15 PM \newline\newline
+\textbf{Cost} = 9.15 PM * \$8K/PM = \$73.2k\newline\newline
+\textbf{Schedule} = 3.67 * 9.15 PM ** 0.318 = 7.42 month\newline\newline
+\noindent
+This prototype is going to take \textbf{7.42 months} to develop and it will cost \textbf{\$73.2k}.
+
+\pagebreak
+
+\section{Prototype II}
+The following changes have been applied after the first version of the prototype:
+\begin{itemize}
+    \item From 5 KSLOC to 21 KSLOC
+    \item The salary for hour becomes 7k per person per month
+    \item CPLX and PLEX becomes nominal
+    \item PLEX becomes nominal
+    \item ACAP and PCAP becomes high because of new prototypers and less experienced developers 
+    \item RUSE increase to High
+\end{itemize}
+
+\subsection{Estimated Effort and cost}
+We need to recalculate the EAF because the priorities changed, so we are going to use RELY, RUSE, ACAP, PCAP and APEX because all the other metrics became nominal:\newline\newline
+\textbf{EAF} = RELY * RUSE * ACAP * PCAP * APEX \newline
+\textbf{EAF} = 0.92 * 1.07 * 0.85 * 0.88 * 0.88 \newline
+\textbf{EAF} = 0.65\newline\newline
+\noindent
+Now that we have the new EAF we can recalculate the effort with the new KSLOC:\newline\newline
+\textbf{Effort} = A * SLOC ** (1.10) * EAF \newline
+\textbf{Effort} = 2.94 * 21 KSLOC ** (1.10) * 0.65 = 54.4 PM \newline\newline
+\textbf{Cost} = 54.4 PM * \$7K/PM = \$380.8k\newline\newline
+\textbf{Schedule} = 3.67 * 54.4 PM ** 0.318 = 13.1 months\newline\newline
+\noindent
+The prototype with the changes are going to cost \textbf{\$380.8k} to develop and it will take \textbf{13.1 months}.
+
+\pagebreak
+
+\section{Full system}
+For the full system all parameters are the same as the prototype except for this:
+\begin{itemize}
+    \item RELY become Very High 
+    \item ACAP become High
+    \item PCAP become High 
+    \item APEX become High 
+    \item RUSE become High 
+\end{itemize}
+\subsection{Estimated Effort and cost}
+For the full system we need to calculate first the EAF:\newline\newline
+\textbf{EAF} = RELY * ACAP * PCAP * APEX * RUSE \newline
+\textbf{EAF} = 1.26 * 0.85 * 0.88 * 0.88 * 1.07 \newline
+\textbf{EAF} = 0.89\newline\newline
+\noindent
+Now that we have the new EAF we can calculate the effor of the full system:\newline\newline
+\textbf{Effort} = A * SLOC ** (1.10) * EAF \newline
+\textbf{Effort} = 2.94 * 21 KSLOC ** (1.10) * 0.89 = 74.5 PM \newline\newline
+\textbf{Cost} = 74.5 PM * \$7K/PM = \$521.5k\newline\newline
+\textbf{Schedule} = 3.67 * 74.5 PM ** 0.318 = 14.4 months\newline\newline
+\pagebreak
+\section{Conclusion}
+Does the total cost and schedule of the prototype and full development fit within the  \$600K budget and 24-month schedule?\newline\newline
+\noindent
+No, if we take into account that we did 2 versions of the prototype and the full development it would be: \newline\newline
+\textbf{Total cost} = Prototype 1 + Prototype 2 + full development \newline
+\textbf{Total cost} = \$73.2k + \$380.8k + \$521.5k\newline
+\textbf{Total cost} = \$975.5k\newline\newline
+\noindent
+\textbf{Total time} = Prototype 1 + Prototype 2 + full development \newline
+\textbf{Total time} = 7.42 months + 13.1 months + 14.4 months\newline
+\textbf{Total time} = 34.92 months\newline\newline
+\noindent
+With this number we are overbudget and we don't have enough time to deliver.

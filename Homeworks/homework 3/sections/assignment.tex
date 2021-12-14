@@ -1,0 +1,120 @@
+\section{Executive Summary}
+In the assignment, we have proposed an idea to improve the loading speed of the workday system. While discussing this assignment with all my peers to improve the workday system, we noticed that the current system lags for 5-8 seconds while surfing the different sections. \newline\newline
+
+\noindent
+
+We use Lighthouse to measure the Core web vitals and study those metrics from The WorkDay Student system. \newline\newline
+\noindent
+
+So we have proposed some fixes on how to improve those metrics to reduce the load time.  \newline\newline
+\noindent
+The performance score will provide how fast or slow the Workday student system takes to load its content.   \newline\newline
+\noindent
+A high-performance score of a website is crucial as it results in a good user experience. There are several ways to increase website performance, such as minimizing the resources to build a web page, optimizing photos and images, enabling compression, browsing cache, etc.\newline\newline
+
+\subsection{Observations}
+\begin{itemize}
+    \item In mobile there is a layout shift when you go to similar pages, instead of keeping the same size for the banners, they are different sizes on different pages.
+    \item The "Academics" session is the page that the layout shift is more noticeable
+    \item One way to fix the layout shift could be a loading shimmer, used by Facebook when you reserve the space first and they get loaded when the information is coming in
+    \item The application uses around 8 plugins, around 3 of those are really required 
+    \item It should minify all the assets and CSS using a compression that do tree shaking, that would avoid shipping code that is not going to be used
+    \item The application doesn't have any service work and is not caching any image.
+\end{itemize}
+\pagebreak
+
+\subsection{Key learning}
+\begin{itemize}
+    \item The loading time of a webpage is directly affected by the various attributes that make up the performance score of the webpage. So it is essential to have all these attributes in an optimal range.
+    \item An FCP of less than 2 seconds is considered to be good, while 2 – 4 sec is average and above 4 is poor. FCP can be improved by using a fast server, caching, hosting your fonts locally, and reducing DOM size.
+    \item SI of a page can be improved by storing static assets in a CDN, essentially by storing copies of the site assets in multiple, geographically diverse nodes.
+    \item LCP is a content metric, so the goal should be to load the most important file in the shortest time possible. Smaller files lead to faster loading, this can be done by compressing the request with GZIP.
+    \item TTI is directly influenced by the machine CPU, the best way to improve this is to make sure to use the least CPU possible when loading the page, a good layout of HTML, use listeners only when necessary, and using the right selectors in CSS could reduce the load in the CPU.
+    \item TBT measures the total time that the browser’s main thread is blocked by tasks longer than 50 ms. So, to optimize TBT should load only the required task on start and send another task as a background process, like a service worker.
+  \end{itemize}
+
+\pagebreak
+
+\subsection{Commentary}
+When it comes to a website's performance, page speed has to be found of utmost importance. The Aberdeen Group conducted research found a one-second delay in page load time yields 11\% fewer views.\newline\newline
+\noindent
+So it is of utmost significance to maintain the speed in an optimal range to avoid bounce rate, visitor engagement, and enhance the user experience.  \newline\newline 
+\noindent
+By employing this technique one can easily find out if the performance score of a webpage and can easily find out which attribute primarily causes the performance score to be poor.
+
+\section{Model and attributes for Workday Student System}
+
+\subsection{Entity}
+Web Page
+
+\subsection{Attributes}
+Right now the current system uses a traditional check-out system where a store 
+staff person scans each item, collects the payment 
+and bags the groceries. \newline
+\begin{center}
+    \begin{tabular}{|l c p{7cm}|} 
+        \hline
+        Name & Attribute & Description \\ [0.5ex] 
+        \hline
+        First Contentful Paint & FCP & Measures how long the browser take to paint something in the DOM, after a user calls the page.\\ 
+        \hline
+        Speed Index & SI & Measures how long takes it takes to be visually displayed while the page is loading.\\
+        \hline
+        Largest Contentful Paint & LCP & Measures how long does it take to largest content in the viewport, not the DOM, to be rendered in the screen.\\
+        \hline
+        Time to interactive & TTI & Measures how long it takes a page to become interactive for the user. \\
+        \hline
+        Total Blocking Time & TBT & Measures the total time that  for a page to be blocked from responding to user input, such as mouse clicks, screen taps, or keyboard presses. \\ 
+        \hline
+        Cumulative Layout Shift & CLS &
+        Measure of the largest burst of layout shift, moving content around, scores for every unexpected layout shift that occurs during the entire lifespan of a page. \\ 
+        \hline
+    \end{tabular}
+\end{center}
+\pagebreak
+\subsection{Model}
+\textbf{FCP} = time * metric Score * 0.1 \newline
+\textbf{SI} = time * metric Score * 0.1 \newline
+\textbf{LCP} = Time * metric Score * 0.25 \newline
+\textbf{TTI} = time * metric Score * 0.1 \newline
+\textbf{TBT} = time * metric Score * 0.30 \newline
+\textbf{CLS} = value * metric Score * 0.15\newline\newline
+\textbf{Performance Score}: FCP + SI + LCP + TTI + TBT + CLS
+
+\pagebreak
+
+\section{We are the customers}
+\subsection{Proposed Fixes}
+\begin{itemize}
+    \item Use small size images
+    \item Use .webp images when possible
+    \item The text in the entries may be of any length.
+    \item Avoid large payloads
+  \end{itemize}
+\subsection{Features}
+\begin{itemize}
+    \item Avoid using JS plugins unless is necessary, delete unused Javascript.
+    \item Serve static assets with an efficient cache policy would minimize the layout shift.
+\end{itemize}
+
+\pagebreak
+
+\section{GQM}
+\begin{itemize}
+    \item \textbf{Goal}: Evaluate Webpage loading performance for Workday
+    \begin{enumerate}
+        \item \textbf{Question}: Who is using the WorkDay Student System?
+        \begin{itemize}
+            \item \textbf{Metrics}: All Stevens Students
+        \end{itemize}        
+        \item \textbf{Question}: What is webpage loading performance?
+        \begin{itemize}
+            \item \textbf{Metrics}: First Contentful Paint (FCP)
+            \item \textbf{Metrics}: Speed Index (SI)
+            \item \textbf{Metrics}: Largest Contentful Paint (LCP) 
+            \item \textbf{Metrics}: Time to interactive (TTI)
+            \item \textbf{Metrics}: Total Blocking Time (TBT) 
+            \item \textbf{Metrics}: Cumulative Layout Shift (CLS)
+        \end{itemize}
+    \end{enumerate}        
+\end{itemize}

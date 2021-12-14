@@ -1,0 +1,137 @@
+\section{How many UUCPs do you have? How many Adjusted Use Case Points? Why?}
+\subsection{How many UUCPs do you have?}
+We have a total 45 UUCP
+
+\subsection{How many Adjusted Use Case Points?}
+We have a total of 59.1 Adjusted Use Case Points
+
+\subsection{Why?}
+\subsubsection{Unadjusted Actor Weight}
+\noindent
+For the Unadjusted Actor Weight (UAW) we have 4 actors:
+\begin{enumerate}
+    \item The interface for the in-inline credit card validation system is an API that we do not have to build and that is a simple actor which gives us a weight of 1.
+    \item The user interface and the admin interface, are user base, since humans are complex they both weigh 3.
+    \item A database for the tickets, since this is a backend application that we need to build and is base on HTTP protocols, is going to weigh 2.
+\end{enumerate}
+
+\noindent
+This give us: \textbf{UAW = 1 + 3 + 3 + 2 = 9}\newline\newline
+\pagebreak
+
+\subsubsection{Unadjusted Use Case Weight}
+\noindent
+Now we calculate de UUCW, in total we have 6 use cases:
+\begin{enumerate}
+    \item \textbf{Make reservation}: Has 6 transactions so we are going to consider that to be average giving us a weight of 10.
+    \item \textbf{Cancel reservation}: Has 5 transactions that also give us a weight of 10.
+    \item \textbf{Look up reservation}: Only has 3 transactions so we would consider that to be simple with a weight of 5.
+    \item \textbf{Add event}: Requires 3 transactions as well so that one is also simple and has a weight of 5.
+    \item \textbf{Remove event}: Is a little bit more complicated and requires 6 transactions so that one is average and has a weight of 10.
+    \item \textbf{Validate a credit card}: Is simpler because we are interacting with another system that we do not need to build, so this one has 3 transactions making it simple with a weight of 5.
+\end{enumerate}
+
+\noindent
+\textbf{UUCW = 10 + 10 + 5 + 5 + 10 + 5 = 45} \newline
+
+\subsubsection{Unadjusted Use Case Points}
+\noindent
+With these two values, we can calculate the Unadjusted Use Case Points using the formula
+\newline
+
+\noindent
+\textbf{UUCP = UAW + UUCW = 9 + 45 = 54}\newline
+
+\noindent
+We need to know what is the Adjusted Use Case Points but to be able to calculate that we need the Technical and Environmental factors.\newline
+
+\noindent
+\textit{We are assuming that the system is going to be web based} \newline\newline
+\pagebreak
+
+\subsubsection{Technical factors}
+
+\begin{center}
+    \begin{tabular}{|l | c | p{7cm}|} 
+        \hline
+        \textbf{Technical Factor} & \textbf{Value} & \textbf{Justification} \\ [0.5ex] 
+        \hline
+        \textbf{Distributed System Required} & 2 & The application is a single-tenant application but it requires a connection to the database and also with a third-party provider. \\ 
+        \hline
+        \textbf{Response Time Is Important} & 5 & The application should reply quickly to the users so they don't drop the page \\
+        \hline
+        \textbf{End-User Efficiency} & 4 & We want the user to be able to purchase the ticket quickly and the admin to be able to manage the events \\
+        \hline
+        \textbf{Complex Internal Processing} & 0 & The logic for the reservation is not that complex \\
+        \hline
+        \textbf{Reusable Code Must Be A Focus} & 0 & We want to reuse as much code as possible to decrease development time and testing \\
+        \hline
+        \textbf{Installation Ease} & 0 &  The user does not need to install anything because is all in the browser\\
+        \hline
+        \textbf{Usability} & 3 & The usability is important but not that much because the customer is only going to make a reservation and get the information is not going to interact with the application in a daily basis, same for the administrator \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\pagebreak
+
+\begin{center}
+    \begin{tabular}{|l | c | p{7cm}|} 
+        \hline
+        \textbf{Cross-Platform Support} & 0 & Since the application is web-based, it will work in all the browsers \\
+        \hline
+        \textbf{Easy to Change} & 1 & Usually, theaters have their branding, and they do not frequently change their systems because their customers like familiarity so we don't think ease of change is too important \\
+        \hline
+        \textbf{Highly Concurrent} & 5 & We need the system to be highly concurrent so it can support the number of transactions they are going to receive \\
+        \hline
+        \textbf{Custom Security} & 4 & Depending on the event the ticket costs could be high and theater is built around an image, and to protect that image we need to make sure that we do not have security breaches  \\
+        \hline
+        \textbf{Dependence On Third-Party Code} & 2 & We need to use the interface from the payment processor and other libraries to connect with the database \\
+        \hline
+        \textbf{User Training} & 0 & Since the application is going to be intuitive we do not need to train the users \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\noindent
+This will give us a \textbf{TCF} of \textbf{0.865}
+
+\pagebreak
+
+\subsubsection{Environmental factors}
+
+\begin{center}
+    \begin{tabular}{|l | c | p{7cm}|} 
+        \hline
+        \textbf{Environmental Factor} & \textbf{Value} & \textbf{Justification} \\ [0.5ex] 
+        \hline
+        \textbf{Familiarity with the project} & 0 & Since the project is something as niche as a theater they are not familiar with that\\
+        \hline
+        \textbf{Application Experience} &0 & The team is built around part-time staff, they do not share the same experience so probably they do not have experience with the application   \\
+        \hline
+        \textbf{OO Programming Experience}&1 & The language is done in an obscure programming language, so probably they have the basics of OO for that language \\
+        \hline
+        \textbf{Lead Analyst Capability} &3 &We trust that the person that gets the requirement is skilled but the requirements change a lot as well \\
+        \hline
+        \textbf{Motivation} &2 & Since primarily the team is build of part time developers they probably are lone wolfs who are required to learn a new obscure language in a domain that they are not familiar \\
+        \hline
+        \textbf{Stable Requirements}&5 & The requirements are not stable at all \\
+        \hline
+        \textbf{Part time staff}& 5 &  The team is built primarily of part-timers \\
+        \hline
+        \textbf{Difficult Programming Language}&5 & The language is obscure so nobody knows it\\
+        \hline
+    \end{tabular}
+\end{center}
+\noindent
+This will give us a \textbf{EF} of \textbf{1.265}. With those values we get a:
+\begin{itemize}
+    \item TCF = 0.865
+    \item EF = 1.265
+    \item UUCW = 45
+    \item UAW = 9
+\end{itemize}
+\noindent
+And that give us as a result an \textbf{UCP} of \textbf{59.1}. \newline\newline
+\noindent
+We are assuming performance ratio of 36 hours per use case point, because of the bad environmental variables, so the total is 2127 hours of effort.
